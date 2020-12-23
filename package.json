@@ -1,0 +1,19 @@
+{
+  "name": "@lijixuan/vue-customdirectives",
+  "version": "1.0.0",
+  "description": "vue自定义指令",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lidaxuan/vue-directives.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lidaxuan/vue-directives/issues"
+  },
+  "homepage": "https://github.com/lidaxuan/vue-directives#readme"
+}
