@@ -4,6 +4,7 @@ import debounce from './src/debounce';
 import emoji from './src/emoji';
 import LazyLoad from './src/lazyLoad';
 import waterMarker from './src/waterMarker';
+import draggable from './src/draggable';
 
 const directives = {
   copy,
@@ -11,7 +12,8 @@ const directives = {
   debounce,
   emoji,
   LazyLoad,
-  waterMarker
+  waterMarker,
+  draggable
 };
 
 export default {
