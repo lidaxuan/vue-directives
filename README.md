@@ -139,3 +139,10 @@ export default {
   <div class="el-dialog" v-draggable></div>
 </template>
 ```
+
+8. `v-Int`
+需求:
+实现一个input只能输入正整数 0 除外
+```html
+<el-input v-model="input" v-Int></el-input>
+```
