@@ -1,6 +1,7 @@
 # vue-directives
 vue自定义指令
 `main.js`
+
 ```js
 import Vue from 'vue'
 import Directives from '@lijixuan/vue-customdirectives';
