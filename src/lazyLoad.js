@@ -1,20 +1,11 @@
+/* jshint esversion: 6 */
+/*
+ * @Description: 
+ * @Author: 李大玄
+ * @Date: 2020-12-23 11:19:32
+ * @FilePath: /vue-directives/src/lazyLoad.js
+ */
 const LazyLoad = {
-  // install方法
-  install(Vue, options) {
-    const defaultSrc = options.default
-    Vue.directive('lazy', {
-      bind(el, binding) {
-        LazyLoad.init(el, binding.value, defaultSrc)
-      },
-      inserted(el) {
-        if (IntersectionObserver) {
-          LazyLoad.observe(el)
-        } else {
-          LazyLoad.listenerScroll(el)
-        }
-      },
-    })
-  },
   // 初始化
   init(el, val, def) {
     el.setAttribute('data-src', val)
@@ -80,4 +71,15 @@ const LazyLoad = {
   },
 }
 
-export default LazyLoad
+export default {
+  bind(el, binding) {
+    LazyLoad.init(el, binding.value, defaultSrc)
+  },
+  inserted(el) {
+    if (IntersectionObserver) {
+      LazyLoad.observe(el)
+    } else {
+      LazyLoad.listenerScroll(el)
+    }
+  }
+}

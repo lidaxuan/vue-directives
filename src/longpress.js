@@ -1,5 +1,13 @@
+/* jshint esversion: 6 */
+/*
+ * @Description: 
+ * @Author: 李大玄
+ * @Date: 2020-12-23 11:09:45
+ * @FilePath: /vue-directives/src/longpress.js
+ */
 const longpress = {
   bind: function (el, binding, vNode) {
+    let time = parseInt(el.attributes['lp-time'].value);
     if (typeof binding.value !== 'function') {
       throw 'callback must be a function'
     }
@@ -13,7 +21,7 @@ const longpress = {
       if (pressTimer === null) {
         pressTimer = setTimeout(() => {
           handler()
-        }, 2000)
+        }, time || 2000)
       }
     }
     // 取消计时器

@@ -35,9 +35,10 @@ Vue.use(Directives)
 如果计时器没有在 2 秒内清除，则判定为一次长按，可以执行关联的函数。
 在移动端要考虑 touchstart，touchend 事件
 
+新增长按时间, 不传默认是 2000 毫秒
 ```js
 <template>
-  <button v-longpress="longpress">长按</button>
+  <button v-longpress="longpress" lp-time="2000">长按</button>
 </template>
 
 <script> 
@@ -56,10 +57,10 @@ export default {
 在开发中，有些提交保存按钮有时候会在短时间内被点击多次，这样就会多次重复请求后端接口，造成数据的混乱，比如新增表单的提交按钮，多次点击就会新增多条重复的数据。
 
 需求：
-防止按钮在短时间内被多次点击，使用防抖函数限制规定时间内只能点击一次。
+防止按钮在短时间内被多次点击，使用防抖函数限制规定时间内只能点击一次。  时间可以自定义 不传默认是 1000 毫秒
 ```js
 <template>
-  <button v-debounce="debounceClick">防抖</button>
+  <button v-debounce="debounceClick" debounceTime="2000">防抖</button>
 </template>
 
 <script> 
@@ -145,4 +146,11 @@ export default {
 实现一个input只能输入正整数 0 除外
 ```html
 <el-input v-model="input" v-Int></el-input>
+```
+
+9. `v-focus`
+需求:
+实现一个input自动获取焦点
+```html
+<el-input v-model="input" v-Int v-focus></el-input>
 ```
