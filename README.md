@@ -155,3 +155,16 @@ export default {
 ```html
 <el-input v-model="input" v-Int v-focus></el-input>
 ```
+
+10. `v-waves`
+点击一个按钮 或者 一个div 要实现水波纹效果
+```html
+// 三个配置项  也可以什么都不传
+{
+  color: '效果颜色',
+  type: 'center' || 'hit',
+  duration: '时间' // 单位: ms
+}
+<div class="mb10 w700 h100 ml100 button-lg" style="background: pink" v-waves="{ color: 'yellow', type: 'hit', duration: 500 }"></div>
+<div class="mb10 w700 h100 ml100 button-lg" style="background: pink" v-waves></div>
+```

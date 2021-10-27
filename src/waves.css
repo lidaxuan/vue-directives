@@ -1,0 +1,81 @@
+/*
+ * @Description: 
+ * @Author: 李大玄
+ * @Date: 2021-10-26 17:44:12
+ * @FilePath: /vue-directives/src/waves.css
+ */
+.waves-ripple {
+  position: absolute;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  background-clip: padding-box;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  opacity: 1;
+}
+
+.waves-ripple.z-active {
+  opacity: 0;
+  -webkit-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+  -webkit-transition: opacity 1s ease-out, -webkit-transform 0.5s ease-out;
+  transition: opacity 1s ease-out, -webkit-transform 0.5s ease-out;
+  transition: opacity 1s ease-out, transform 0.5s ease-out;
+  transition: opacity 1s ease-out, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+/* .button-lg {
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: all 0.1s ease;
+}
+
+.button-lg:before,
+.button-lg:after {
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  top: -2px;
+  left: -2px;
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+.button-lg:after {
+  filter: blur(20px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+} */

@@ -14,6 +14,7 @@ import waterMarker from './src/waterMarker';
 import draggable from './src/draggable';
 import Int from './src/int';
 import focus from './src/focus';
+import waves from './src/waves';
 
 const directives = {
   copy,
@@ -24,7 +25,8 @@ const directives = {
   waterMarker,
   draggable,
   Int,
-  focus
+  focus,
+  waves
 };
 
 export default {
