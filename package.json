@@ -1,6 +1,6 @@
 {
   "name": "@lijixuan/vue-customdirectives",
-  "version": "1.2.2",
+  "version": "1.3.2",
   "description": "vue自定义指令",
   "main": "index.js",
   "scripts": {
