@@ -168,3 +168,50 @@ export default {
 <div class="mb10 w700 h100 ml100 button-lg" style="background: pink" v-waves="{ color: 'yellow', type: 'hit', duration: 500 }"></div>
 <div class="mb10 w700 h100 ml100 button-lg" style="background: pink" v-waves></div>
 ```
+
+11. `v-resize`
+
+一个容器 可以拖拽 放大,缩小 的指令,
+
+
+| 参数     | 说明                          | 必传 | 类型    | 默认                                                         |
+| -------- | ----------------------------- | ---- | ------- | ------------------------------------------------------------ |
+| min      | 最小尺寸                      | 否   | Object, | {width: 0, height: 0}  两个参数的类型是Number                |
+| max      | 最大尺寸                      | 否   | Object, | {width: 0, height: 0}  两个参数的类型是Number                |
+| move     | 边是否可以拖拽,可传一个到全部 | 否   | Object, | { <br /> "t": true,    // top <br /> "l": true,    // left<br /> "r": true,   // right <br /> "b": true,  // bottom<br /> "tl": true,  // top left <br /> "tr": true,  // top right <br /> "bl": true,  // bottom left <br /> "br": true  // bottom right<br />} |
+| speed    | 步长 单位px                   | 否   | Number  | 1px                                                          |
+| disabled | 禁用                          | 否   | Boolean | false                                                        |
+
+
+使用
+1. 
+```html
+   <div v-resize="resizeObj" style="background: pink; width: 300px; height: 200px" class="mr20 ml30">
+        起源于西周时期的宗法制对我国社会的发展产生了深远影响，尤其是对当今家族式企业的发展影响更不可忽视。随着国内创一代的逐渐老去，当年创一代所辛苦打下来的基业面前遇到后续如何传承的问题。这其中有以严介和之子严昊为代表的子承父业，也有以美的董事长何享健之子何剑锋另起炉灶。
+      </div>
+```
+```js
+resizeObj: {
+  max: {
+    width: 0,
+    height: 0,
+  },
+  min: {
+    width: 0,
+    height: 0,
+  },
+  speed: 1,
+  disabled: false,
+  move: {
+    t: true, // top
+    l: true, // left
+    r: false, // right
+    b: true, // bottom
+    tl: true, // top left
+    tr: true, // top right
+    bl: true, // bottom left
+    br: true, // bottom right<br />}
+  },
+},
+```
+
