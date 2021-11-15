@@ -8,7 +8,7 @@
 import copy from './src/copy';
 import longpress from './src/longpress';
 import debounce from './src/debounce';
-import emoji from './src/emoji';
+import testIpt from './src/testIpt';
 import LazyLoad from './src/lazyLoad';
 import waterMarker from './src/waterMarker';
 import draggable from './src/draggable';
@@ -21,7 +21,7 @@ const directives = {
   copy,
   longpress,
   debounce,
-  emoji,
+  testIpt,
   LazyLoad,
   waterMarker,
   draggable,

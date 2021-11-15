@@ -75,17 +75,15 @@ export default {
 </script>
 ```
 
-4. `v-emoji`
+4. `v-testIpt`
 背景：
 开发中遇到的表单输入，往往会有对输入内容的限制，比如不能输入表情和特殊字符，只能输入数字或字母等。
+
 我们常规方法是在每一个表单的 on-change 事件上做处理。
-
-
 ```js
 <template>
   <input type="text" v-model="note" @change="vaidateEmoji" />
 </template>
-
 <script>
 export default {
   methods: {
@@ -97,6 +95,30 @@ export default {
 }
 </script>
 ```
+现在使用此指令 `v-testIpt` 内置正则
+```html
+<el-input v-model="ipt"  v-testIpt.time="callback"></el-input>
+<!-- callback 返回一个 true, false -->
+```
+以下是内置方法, 会定期更新
+```js
+const map = {
+  emoji: '',      // 表情, 
+  email: '',      // 邮政编码
+  prot: '',       // 端口号
+  video: '',      // 视频
+  time: '',       // 时间 // 12:12:12
+  fraction: '',   // 小数
+  floatingPointNumber: '', // 浮点数 例如 1.5
+  integer: '',    // 整数 -213 123
+  positiveInteger: '', // 正整数 不含0
+  url: '',        // 例如: www.aa.com || https://aa.com || http://aa.com || https://aa.com/search/name/a 
+  version: '',    // 例如: x:y:z
+  strAndNumber:   // 中文和数字
+}
+```
+
+
 
 4. `v-LazyLoad`
 背景：在类电商类项目，往往存在大量的图片，如 banner 广告图，菜单导航图，美团等商家列表头图等。图片众多以及图片体积过大往往会影响页面加载速度，造成不良的用户体验，所以进行图片懒加载优化势在必行。
