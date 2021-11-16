@@ -175,7 +175,29 @@ const map = {
 需求:
 实现一个input自动获取焦点
 ```html
-<el-input v-model="input" v-Int v-focus></el-input>
+<el-input v-model="input"  v-focus></el-input>
+
+<input type="text" class="h100 w300"  v-focus placeholder="nihao">
+
+<el-input placeholder="123123" v-focus></el-input>
+
+<div v-focus>
+  sad
+  <div>123123</div>
+</div>
+
+<div>
+  <template v-for="item in 10">
+    <el-input :placeholder="`asdd${item}`" :key="item" v-focus></el-input>
+  </template>
+</div>
+
+<div v-focus>
+  <template v-for="item in 10">
+    <el-input :placeholder="`asdd${item}`" :key="item" ></el-input>
+  </template>
+</div>
+
 ```
 
 10. `v-waves`
