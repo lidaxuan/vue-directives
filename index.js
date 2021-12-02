@@ -9,26 +9,28 @@ import copy from './src/copy';
 import longpress from './src/longpress';
 import debounce from './src/debounce';
 import testIpt from './src/testIpt';
-import LazyLoad from './src/lazyLoad';
+import lazyLoad from './src/lazyLoad';
 import waterMarker from './src/waterMarker';
 import draggable from './src/draggable';
-import Int from './src/int';
+import int from './src/int';
 import focus from './src/focus';
 import waves from './src/waves';
 import resize from './src/resize';
+import separator from './src/separator';
 
 const directives = {
   copy,
   longpress,
   debounce,
   testIpt,
-  LazyLoad,
+  lazyLoad,
   waterMarker,
   draggable,
-  Int,
+  int,
   focus,
   waves,
-  resize
+  resize,
+  separator
 };
 
 export default {

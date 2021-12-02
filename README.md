@@ -120,7 +120,7 @@ const map = {
 
 
 
-4. `v-LazyLoad`
+5. `v-lazyLoad`
 背景：在类电商类项目，往往存在大量的图片，如 banner 广告图，菜单导航图，美团等商家列表头图等。图片众多以及图片体积过大往往会影响页面加载速度，造成不良的用户体验，所以进行图片懒加载优化势在必行。
 
 需求：实现一个图片懒加载指令，只加载浏览器可见区域的图片。
@@ -134,8 +134,8 @@ const map = {
 
 ```js
 <template>
-  <img v-LazyLoad="xxx.jpg" />
-</template>
+  <img v-lazyLoad="xxx.jpg" />
+</templat>
 ```
 
 6. `v-waterMarker`
@@ -145,7 +145,7 @@ const map = {
 将其设置为背景图片，从而实现页面或组件水印效果
 ```
 <template>
-  <div v-waterMarker="{text:'lzg版权所有',textColor:'rgba(180, 180, 180, 0.4)'}"></div>
+  <div v-waterMarker="{text:'ldx版权所有',textColor:'rgba(180, 180, 180, 0.4)'}"></div>
 </template>
 ```
 
@@ -164,11 +164,11 @@ const map = {
 </template>
 ```
 
-8. `v-Int`
+8. `v-int`
 需求:
 实现一个input只能输入正整数 0 除外
 ```html
-<el-input v-model="input" v-Int></el-input>
+<el-input v-model="input" v-int></el-input>
 ```
 
 9. `v-focus`
@@ -259,3 +259,15 @@ resizeObj: {
 },
 ```
 
+12. `v-separator`
+
+做一个数字的千分位,用法在下面
+
+使用: 
+```html
+<div v-separator="12312"></div>
+<div font="28" v-separator="num"></div>
+<div font="28" v-separator="11111112312.234"></div>
+<div font="28" v-separator="{ num: 234633.234 }"></div>
+<div font="28" v-separator="{ num: 11111112312.234, separator: '我才' }"></div>
+```
