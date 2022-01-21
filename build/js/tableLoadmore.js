@@ -1,0 +1,1 @@
+const tableLoadmore={bind(t,e){let l,o=0,i=!0;t.addEventListener("scroll",function(){l=this.scrollTop,i=o<l,o=l;this.scrollHeight-this.scrollTop-this.clientHeight<=0&&i?e.value("down"):0==l&&e.value("up")})}};export default tableLoadmore;

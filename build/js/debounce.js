@@ -1,0 +1,1 @@
+const debounce={inserted:function(e,t){let n=parseInt(e.attributes.debounceTime.value),u;e.addEventListener("click",()=>{u&&clearTimeout(u),u=setTimeout(()=>{t.value()},n||1e3)})}};export default debounce;

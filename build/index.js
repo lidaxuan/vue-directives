@@ -1,0 +1,1 @@
+let directives={};const files=require.context("./js",!0,/\.(js)$/);files.keys().map(e=>{var t=e.match(/\/(.+)\./);t&&1<=t.length&&(t=t[1],(e=files(e)).default&&(directives[t]=e.default))});export default{install(t){Object.keys(directives||{}).forEach(e=>{t.directive(e,directives[e])})}};

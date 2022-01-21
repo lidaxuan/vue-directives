@@ -3,10 +3,10 @@
  * @Description: 水波纹
  * @Author: 李大玄
  * @Date: 2021-10-27 15:35:38
- * @FilePath: /vue-directives/src/waves.js
+ * @FilePath: /vue-directives/Users/lidaxuan/Desktop/gulp/src/js/waves.js
  */
 
-import './waves.css'
+import '../css/waves.css';
 
 export default {
   bind(el, binding) {
