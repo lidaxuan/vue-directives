@@ -3,7 +3,7 @@
  * @Description: 
  * @Author: 李大玄
  * @Date: 2022-01-21 09:58:50
- * @FilePath: /vue-directives/Users/lidaxuan/Desktop/gulp/gulpfile.js
+ * @FilePath: /vue-directives/gulpfile.js
  */
 var gulp = require('gulp');
 var babel = require('gulp-babel');//把es6语法解析成es5
@@ -13,40 +13,45 @@ var uglify = require('gulp-uglify');//压缩
 var del = require('del');//删除文件
 
 
-gulp.task('clean:Build', function () {
-  return del([
+gulp.task('clean:Build', function (done) {
+  del([
     './build/**/',
   ]);
+  done();
 });
 
 
 //js压缩
-gulp.task('js', function () {
-  return gulp.src('./src/*.js')
+gulp.task('js', function (done) {
+  gulp.src('./src/*.js')
     .pipe(babel())
     .pipe(uglify())
     .pipe(gulp.dest('./build/'));
+  done();
 });
 
-gulp.task('directive', function () {
-  return gulp.src('./src/**/*.js')
+gulp.task('directive', function (done) {
+  gulp.src('./src/**/*.js')
     .pipe(babel())
     .pipe(uglify())
     .pipe(gulp.dest('./build/'));
+  done();
 });
 
 
-gulp.task('vue', function () {
-  return gulp.src('./src/**/*.vue')
+gulp.task('vue', function (done) {
+  gulp.src('./src/**/*.vue')
     .pipe(gulp.dest('./build/'));
+  done();
 });
 
 //css压缩
 var minifyCss = require('gulp-minify-css');//压缩
-gulp.task('style', function () {
-  return gulp.src('./src/**/*.css')
+gulp.task('style', function (done) {
+  gulp.src('./src/**/*.css')
     .pipe(minifyCss())
     .pipe(gulp.dest('./build/'));
+  done();
 });
 
 //img

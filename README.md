@@ -275,7 +275,8 @@ resizeObj: {
 13. `v-rightKey`
 
     鼠标右键事件的一个指令
-  ![avatar](./img/WeChat1b016b095f04333e548ecf43fff476a4.png)
+    <!-- ![avatar](./img/WeChat1b016b095f04333e548ecf43fff476a4.png) -->
+    ![avatar](https://raw.githubusercontent.com/lidaxuan/vue-directives/main/img/WeChat1b016b095f04333e548ecf43fff476a4.png)
     
 
     ```html
@@ -337,3 +338,73 @@ resizeObj: {
     ```
 
     
+
+14. `v-syncScroll` 实现滚动条同步滚动的指令
+
+    无论宽高是否一样 都可以
+    ![avatar](https://raw.githubusercontent.com/lidaxuan/vue-directives/main/img/fdb0da1d-8f0b-4af0-9d49-896bbb8da802.jpeg)
+
+| 参数 | 可选值             | 默认值    | 说明   |
+| ---- | ---------------- | --------- | --------- |
+| type | x, y, xy 或者 yx | xy ( yx ) | 监听 overflow 的 x y |
+|  target  | DOM元素 ID | - | 双向滚动元素的ID |
+
+demo
+```html
+<template>
+  <div class="p20">
+    <div class="diffCont left" ref="leftCont" v-syncScroll="{ type: 'yx', target: 'right' }">
+      测试数据测试数据测试数据测试据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据<br />
+    </div>
+    <br />
+    <div class="diffCont right" id="right" ref="rightCont">
+      数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据<br />
+      数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据<br />
+      数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据<br />
+      测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据<br />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: '',
+  props: [],
+  data() {
+    return {};
+  },
+  components: {},
+  computed: {},
+  beforeMount() {},
+  mounted() {
+    //  scrollWidth：对象的实际内容的宽度，不包边线宽度，会随对象中内容超过可视区后⽽变⼤。
+    //  clientWidth：对象内容的可视区的宽度，不包滚动条等边线，会随对象显⽰⼤⼩的变化⽽改变。
+    //  offsetWidth：对象整体的实际宽度，包滚动条等边线，会随对象显⽰⼤⼩的变化⽽改变。
+    //  innerWidth：
+    //  window.innerHeight=浏览器窗⼝的内部⾼度
+    //  window.innerWidth=浏览器窗⼝的内部宽度
+  },
+  methods: {},
+  watch: {}
+};
+</script>
+<style scoped>
+.flex {
+  border: 1px solid #ccc;
+}
+.diffCont {
+  height: 200px;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+.left {
+  width: 400px;
+  height: 200px;
+}
+.right {
+  width: 200px;
+  height: 400px;
+}
+</style>
+
+```
