@@ -119,5 +119,9 @@ gulp.task('style', function (done) {
 //执行多个任务gulp4的用法 gulp.series()串行，gulp.parallel()并行
 gulp.task('default', gulp.series('clean:Build', gulp.parallel('js', 'directive', 'vue', 'style'), function (done) {
   console.log('执行完成');
+<<<<<<< HEAD
   done();
+=======
+  done()
+>>>>>>> d5def8d73d46dec377ecc9ec4199e1e269f4d228
 }))

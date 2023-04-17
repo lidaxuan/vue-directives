@@ -448,3 +448,52 @@ demo
     效果图 滚动页面 表头吸附到顶部
 
     ![avatar](https://img-blog.csdnimg.cn/16077c4d76f745e28c75fcbb5528d09f.png)
+
+
+
+16. `v-watchResize` 监听任意盒子的宽高变化  并且会将改变的数据传递回去 , 默认时间是 `300`毫秒
+
+    ```vue
+    <template>
+      <div class="f">
+        <el-switch active-value="300px" inactive-value="500px" v-model="sw"></el-switch>
+    
+        <div class="flex">
+          <div class="box1" :style="{ width: sw }"></div>
+          <div v-watchResize="asdasd" class="flex-item box2"></div>
+        </div>
+      </div>
+    </template>
+    
+    <script>
+    export default {
+      data() {
+        return {
+          sw: "300px"
+        };
+      },
+      methods: {
+        asdasd(val) {
+          console.log(val);
+        }
+      },
+    };
+    </script>
+    <style lang="scss" scoped>
+    .f {
+      height: 100%;
+      border: 10px solid red;
+      .box1 {
+        height: 300px;
+        background: #000;
+      }
+      .box2 {
+        height: 300px;
+        background: pink;
+      }
+    }
+    </style>
+    
+    ```
+
+    

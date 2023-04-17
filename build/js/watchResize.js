@@ -1,0 +1,1 @@
+export default{bind(e,t){let l=null;const n=new ResizeObserver(e=>{l&&(clearTimeout(l),l=null),l=setTimeout(()=>{t.value&&t.value(e[0].contentRect)},300)});n.observe(e)}};
